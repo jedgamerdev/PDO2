@@ -18,11 +18,8 @@ app.use((req, res, next) => {
 });
 
 // routes
-app.use(
-  "https://exercise-tracker-626p.onrender.com/api/workouts",
-  workoutRoutes
-);
-app.use("https://exercise-tracker-626p.onrender.com/api/user", userRoutes);
+app.use("/api/workouts", workoutRoutes);
+app.use("/api/user", userRoutes);
 
 // connect to db
 mongoose
