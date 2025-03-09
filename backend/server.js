@@ -4,21 +4,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const workoutRoutes = require("./routes/workouts");
 const userRoutes = require("./routes/user");
-const cors = require("cors");
 
 // express app
 const app = express();
 
 // middleware
-app.use(express.json());
-app.use(
-  cors({
-    origin: "http://localhost:3000", //Allow requests from this origin.
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], //Allow these methods.
-    allowedHeaders: ["Content-Type", "Authorization"], //Allow these headers.
-    credentials: true, //Allow cookies to be sent.
-  })
-);
 
 app.use((req, res, next) => {
   console.log(req.path, req.method);
